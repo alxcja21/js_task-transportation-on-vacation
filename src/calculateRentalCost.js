@@ -3,13 +3,22 @@
  *
  * @return {number}
  */
-function calculateRentalCost(days) {
-  let result = days * 40;
 
-  if (days >= 7) {
-    result = result - 50;
-  } else if (days >= 3) {
-    result = result - 20;
+function calculateRentalCost(days) {
+  const costPerDay = 40;
+  const sevenDays = 7;
+  const fiftyDiscount = 50;
+  const threeDays = 3;
+  const twentyDiscount = 20;
+
+  const result = days * costPerDay;
+
+  if (days >= sevenDays) {
+    return result - fiftyDiscount;
+  }
+
+  if (days >= threeDays) {
+    return result - twentyDiscount;
   }
 
   return result;
